@@ -307,7 +307,7 @@ function isOfficeDocument(fileName = '') {
 }
 
 export default function App() {
-  const [theme, setTheme] = useState('dark')
+  const [theme, setTheme] = useState('light')
   const [sourceName, setSourceName] = useState('')
   const [status, setStatus] = useState('Carga una imagen para separar sus elementos visuales, o un documento para extraer imágenes embebidas.')
   const [items, setItems] = useState([])
@@ -316,7 +316,7 @@ export default function App() {
   const inputRef = useRef(null)
 
   useEffect(() => {
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
+    const prefersDark = window.matchMedia('(prefers-color-scheme: light)').matches
     setTheme(prefersDark ? 'dark' : 'light')
   }, [])
 
@@ -418,7 +418,7 @@ export default function App() {
           />
           <span className="file-trigger">Seleccionar archivo</span>
           <span className="file-name">{sourceName || 'PDF, DOCX, PPTX, XLSX o imagen'}</span>
-          <small>En imágenes se detectan y separan regiones visuales; en Office se extraen imágenes reales embebidas.</small>
+          {/* <small>En imágenes se detectan y separan regiones visuales; en Office se extraen imágenes reales embebidas.</small> */}
         </label>
 
         <section className="info-card">
@@ -436,8 +436,13 @@ export default function App() {
           </div>
         </section>
 
-        <button type="button" className="theme-toggle" onClick={() => setTheme((current) => current === 'dark' ? 'light' : 'dark')} aria-label="Cambiar tema">
-          {theme === 'dark' ? 'Modo claro' : 'Modo oscuro'}
+        <button
+          type="button"
+          className="theme-toggle"
+          onClick={() => setTheme((current) => current === 'light' ? 'dark' : 'light')}
+          aria-label="Cambiar tema"
+        >
+          {theme === 'light' ? 'Modo oscuro' : 'Modo claro'}
         </button>
       </aside>
 
