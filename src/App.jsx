@@ -315,10 +315,10 @@ export default function App() {
   const [busy, setBusy] = useState(false)
   const inputRef = useRef(null)
 
-  useEffect(() => {
-    const prefersDark = window.matchMedia('(prefers-color-scheme: light)').matches
-    setTheme(prefersDark ? 'dark' : 'light')
-  }, [])
+  // useEffect(() => {
+  //   const prefersDark = window.matchMedia('(prefers-color-scheme: light)').matches
+  //   setTheme(prefersDark ? 'dark' : 'light')
+  // }, [])
 
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', theme)
