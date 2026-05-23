@@ -450,7 +450,7 @@ export default function App() {
         <section className="panel preview-panel">
           <div className="panel-head">
             <div>
-              <h2>Vista previa del origen extraído</h2>
+              <h2>Vista previa de archivo de origen</h2>
               <p>{sourceName || 'Todavía no hay un archivo cargado'}</p>
             </div>
           </div>
